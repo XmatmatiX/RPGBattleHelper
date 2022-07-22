@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="RPGBattleHelper.Views.AddEnemyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:RPGBattleHelper.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Add Enemy" FontSize="20" HorizontalAlignment="Center" Foreground="RosyBrown" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+
+        <ListBox x:Name="EnemyLibraryLB" Grid.Row="1" Grid.Column="0" Margin="20,10,20,10" SelectionChanged="EnemyLibraryLB_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock x:Name="HPTB" Text="HP" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
+            <TextBlock x:Name="MPTB" Text="MP" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0"/>
+            <TextBlock x:Name="StrengthTB" Text="Strength" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
+            <TextBlock x:Name="AgilityTB" Text="Agility" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="1"/>
+            <TextBlock x:Name="IntelligenceTB" Text="Intelligence" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
+            <TextBlock x:Name="VitalityTB" Text="Vitality" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="2"/>
+            <TextBlock x:Name="FireResistanceTB" Text="Fire Resistance" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
+            <TextBlock x:Name="EarthResistanceTB" Text="Earth Resistance" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="3"/>
+            <TextBlock x:Name="WindResistanceTB" Text="Wind Resistance" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
+            <TextBlock x:Name="WaterResistanceTB" Text="Water Resistance" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="4"/>
+            <TextBlock x:Name="ArmorTB" Text="Armor" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2"/>
+
+            <Button x:Name="AddBtn" Content="Add New Enemy" Grid.Column="0" Grid.Row="6" Margin="10,10,10,10" Click="AddBtn_Click"/>
+            <Button x:Name="DeleteBtn" Content="Delete Enemy" Grid.Column="1" Grid.Row="6" Margin="10,10,10,10" Click="DeleteBtn_Click"/>
+
+        </Grid>
+
+        <ListBox x:Name="EnemiesLB" Grid.Row="1" Grid.Column="3" Margin="20,10,20,10" SelectionChanged="EnemiesLB_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+    </Grid>
+</UserControl>
